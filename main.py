@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
             strings = read_file(path="user_data/mnemonic.txt")
             for string in strings:
-                address = string if ' ' in string else str(
+                address = string if ' ' not in string else str(
                     get_wallet_from_mnemonic(mnemonic=string, prefix="osmo").address()
                 )
 
